@@ -5,12 +5,62 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleone={
+    title:'article-one|tour',
+    heading:'article one',
+    date:'august 8 2017',
+    content:`    <p>
+               Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.[1] The best known example application is for remote login to computer systems by users. 
+                </p>
+               <p>
+                Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.[1] The best known example application is for remote login to computer systems by users.
+               </p>`
+}
+
+function createTemplate(data){
+var title=data.title;
+var date=data.date;
+var heading=data.heading;
+var content=data.content;
+
+
+var htmltemplate=`
+
+<html>
+    <head>
+        <title>${title}</title>
+        <meta name="viewport" content="width-device-width, initial-scale=1"/>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+    <div class="container">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr/>
+        <h3>article one</h3>
+        
+        <div>
+            ${date}
+        </div>
+        <div>
+          ${content}  
+        </div>
+    </div>
+    </body>
+</html>
+
+`;
+  return htmlTemplate;
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html')); 
+   res.send(createTemplate(articleone));
 });
 
 app.get('/article-two',function(req,res){
