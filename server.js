@@ -24,7 +24,7 @@ var heading=data.heading;
 var content=data.content;
 
 
-var htmltemplate=`
+var htmlTemplate=`
 
 <html>
     <head>
@@ -49,7 +49,6 @@ var htmltemplate=`
     </div>
     </body>
 </html>
-
 `;
   return htmlTemplate;
 }
