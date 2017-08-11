@@ -14,7 +14,7 @@ button.onclick= function(){
               span.innerHTML=counter.toString();
           }
       }
-  }
+  };
     
     //make the request
     request.open('GET','http://mtienkoua.imad.hasura-app.io/counter',true);
