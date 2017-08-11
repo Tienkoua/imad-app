@@ -1,4 +1,4 @@
-console.log("well played");
+
 //counter code
 var button=document.getElementById('counter');
 button.onclick= function(){
@@ -23,3 +23,4 @@ button.onclick= function(){
     
     
 };
+console.log("well played");
