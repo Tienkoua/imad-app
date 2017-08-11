@@ -21,5 +21,4 @@ button.onclick= function(){
     request.send(null);
     
     
-    
 };
